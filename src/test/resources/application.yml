@@ -1,0 +1,7 @@
+spring:
+  main:
+    web-application-type: none
+
+external:
+  api:
+    url: https://api.restful-api.dev
