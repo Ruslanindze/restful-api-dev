@@ -1,4 +1,4 @@
-package aqa.nindza.restfulapi.infra.dto.rq;
+package aqa.nindza.restfulapi.infra.dto.open.rq;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;

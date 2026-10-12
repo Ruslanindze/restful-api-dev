@@ -1,13 +1,13 @@
 package aqa.nindza.restfulapi.infra.clients;
 
-import aqa.nindza.restfulapi.infra.config.FeignConfig;
-import aqa.nindza.restfulapi.infra.dto.rq.ObjectCreateRq;
-import aqa.nindza.restfulapi.infra.dto.rq.ObjectFullUpdateRq;
-import aqa.nindza.restfulapi.infra.dto.rq.ObjectPartUpdateRq;
-import aqa.nindza.restfulapi.infra.dto.rs.ObjectCreateRs;
-import aqa.nindza.restfulapi.infra.dto.rs.ObjectFullUpdateRs;
-import aqa.nindza.restfulapi.infra.dto.rs.ObjectPartUpdateRs;
-import aqa.nindza.restfulapi.infra.dto.rs.ObjectRs;
+import aqa.nindza.restfulapi.infra.config.OpenFeignConfig;
+import aqa.nindza.restfulapi.infra.dto.open.rq.ObjectCreateRq;
+import aqa.nindza.restfulapi.infra.dto.open.rq.ObjectFullUpdateRq;
+import aqa.nindza.restfulapi.infra.dto.open.rq.ObjectPartUpdateRq;
+import aqa.nindza.restfulapi.infra.dto.open.rs.ObjectCreateRs;
+import aqa.nindza.restfulapi.infra.dto.open.rs.ObjectFullUpdateRs;
+import aqa.nindza.restfulapi.infra.dto.open.rs.ObjectPartUpdateRs;
+import aqa.nindza.restfulapi.infra.dto.open.rs.ObjectRs;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,14 +16,14 @@ import java.util.Map;
 
 
 @FeignClient(
-        name = "restful-api-service",
+        name = "restful-api-public",
         url = "${external.api.url}",
-        configuration = FeignConfig.class
+        configuration = OpenFeignConfig.class
 )
 public interface RestfulApiPublicClient {
 
     @GetMapping("/objects")
-    List<ObjectRs> getObjects(@RequestParam("id") List<String> ids);
+    List<ObjectRs> getObjects(@RequestParam(value = "id", required = false) List<String> ids);
 
     @GetMapping("/objects/{id}")
     ObjectRs getObject(@PathVariable("id") String id);

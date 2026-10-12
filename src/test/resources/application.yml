@@ -5,6 +5,7 @@ spring:
 external:
   api:
     url: https://api.restful-api.dev
+    secure-key: ${X_API_KEY:UNKNOWN}
 
 logging:
   level:

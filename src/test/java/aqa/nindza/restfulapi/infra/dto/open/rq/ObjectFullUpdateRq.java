@@ -1,12 +1,11 @@
-package aqa.nindza.restfulapi.infra.dto.rs;
+package aqa.nindza.restfulapi.infra.dto.open.rq;
 
 import lombok.Data;
 
 import java.util.Map;
 
 @Data
-public class ObjectRs {
-    public String id;
+public class ObjectFullUpdateRq {
     public String name;
     public Map<String, Object> data;
 }

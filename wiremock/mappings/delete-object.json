@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "DELETE",
+    "urlPathPattern": "/objects/.*"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "message": "Object deleted successfully"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

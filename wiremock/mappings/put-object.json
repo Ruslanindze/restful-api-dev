@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "PUT",
+    "urlPathPattern": "/objects/.*",
+    "headers": {
+      "Content-Type": {
+        "matches": "application/json.*"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "id": "1",
+      "name": "Updated Object",
+      "data": {
+        "color": "Red",
+        "capacity": "256 GB"
+      }
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "PATCH",
+    "urlPathPattern": "/objects/.*",
+    "headers": {
+      "Content-Type": {
+        "matches": "application/json.*"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "id": "1",
+      "name": "Partially Updated Object",
+      "data": {
+        "color": "Blue",
+        "capacity": "128 GB"
+      }
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
