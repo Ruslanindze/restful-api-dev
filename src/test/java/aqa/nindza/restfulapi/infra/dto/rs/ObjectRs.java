@@ -6,7 +6,7 @@ import java.util.Map;
 
 @Data
 public class ObjectRs {
-    public Long id;
+    public String id;
     public String name;
     public Map<String, Object> data;
 }

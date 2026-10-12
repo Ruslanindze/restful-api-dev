@@ -5,3 +5,12 @@ spring:
 external:
   api:
     url: https://api.restful-api.dev
+
+logging:
+  level:
+    root: INFO
+    aqa:
+      nindza:
+        restfulapi:
+          infra:
+            clients: DEBUG
