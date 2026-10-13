@@ -1,7 +1,7 @@
 {
   "request": {
     "method": "DELETE",
-    "urlPathPattern": "/objects/.*"
+    "urlPathPattern": "/objects/200[0-9]+"
   },
   "response": {
     "status": 200,

@@ -1,0 +1,6 @@
+{
+  "id": "{{request.path.[1]}}",
+  "name": "{{#if (jsonPath request.body '$.name')}}{{jsonPath request.body '$.name'}}{{else}}Stubbed Name{{/if}}",
+  "updatedAt": "{{now format='yyyy-MM-dd\'T\'HH:mm:ss.SSSZ'}}",
+  "data": {{#if (jsonPath request.body '$.data')}}{{{jsonPath request.body '$.data'}}}{{else}}null{{/if}}
+}

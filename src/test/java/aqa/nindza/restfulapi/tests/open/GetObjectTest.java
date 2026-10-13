@@ -5,19 +5,23 @@ import aqa.nindza.restfulapi.utils.ResourceReader;
 import feign.FeignException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import static aqa.nindza.restfulapi.infra.config.TestTags.*;
 import static net.javacrumbs.jsonunit.assertj.JsonAssertions.assertThatJson;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 
 @DisplayName("GET /object/{id}")
+@Tag(REGRESS)
 public class GetObjectTest extends BaseTest {
 
     @Nested
+    @Tag(POSITIVE)
     class Positive {
         @ParameterizedTest
         @CsvSource(
@@ -26,6 +30,7 @@ public class GetObjectTest extends BaseTest {
                         "13, data/out/get_object_13.json"
                 }
         )
+        @Tag(SMOKE)
         void shouldReturnObjectByIdExist(String id, String jsonExpected) {
             var actualRs = restfulApiPublicClient.getObject(id);
             String expectedRs = ResourceReader.read(jsonExpected);
@@ -40,6 +45,7 @@ public class GetObjectTest extends BaseTest {
     }
 
     @Nested
+    @Tag(NEGATIVE)
     class Negative {
         @ParameterizedTest(name = "Объект не найден | {0}")
         @ValueSource(strings = "404")

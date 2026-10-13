@@ -71,6 +71,16 @@
             <version>${aspectj.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-hc5</artifactId>
+            <version>13.16</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-jackson</artifactId>
+            <version>13.16</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>

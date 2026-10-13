@@ -1,0 +1,22 @@
+{
+  "priority": 15,
+  "request": {
+    "method": "PUT",
+    "urlPathPattern": "/objects/1",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.id == '2')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 400,
+    "jsonBody": {
+      "error": "Bad Request",
+      "message": "ID in URL and body mismatch"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

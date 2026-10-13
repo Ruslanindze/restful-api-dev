@@ -1,22 +1,19 @@
 {
+  "priority": 15,
   "request": {
     "method": "PUT",
     "urlPathPattern": "/objects/.*",
     "headers": {
       "Content-Type": {
-        "matches": "application/json.*"
+        "matches": "text/.*"
       }
     }
   },
   "response": {
-    "status": 200,
+    "status": 415,
     "jsonBody": {
-      "id": "1",
-      "name": "Updated Object",
-      "data": {
-        "color": "Red",
-        "capacity": "256 GB"
-      }
+      "error": "Unsupported Media Type",
+      "message": "Content-Type must be application/json"
     },
     "headers": {
       "Content-Type": "application/json"

@@ -3,6 +3,7 @@ package aqa.nindza.restfulapi.tests.open;
 import aqa.nindza.restfulapi.BaseTest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -10,15 +11,19 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.List;
 import java.util.stream.Stream;
 
+import static aqa.nindza.restfulapi.infra.config.TestTags.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("GET /objects")
+@Tag(REGRESS)
 public class GetObjectsTest extends BaseTest {
 
     @Nested
+    @Tag(POSITIVE)
     class Positive {
         @DisplayName("Получение всех объектов без фильтрации")
         @Test
+        @Tag(SMOKE)
         void getObjectsWithoutIdFilterReturnsAllObjects() {
             var actualRs = restfulApiPublicClient.getObjects(null);
 
@@ -56,5 +61,4 @@ public class GetObjectsTest extends BaseTest {
             return Stream.of(List.of("2", "6", "12"));
         }
     }
-
 }

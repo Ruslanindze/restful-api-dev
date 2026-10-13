@@ -8,6 +8,9 @@ import aqa.nindza.restfulapi.infra.dto.open.rs.ObjectCreateRs;
 import aqa.nindza.restfulapi.infra.dto.open.rs.ObjectFullUpdateRs;
 import aqa.nindza.restfulapi.infra.dto.open.rs.ObjectPartUpdateRs;
 import aqa.nindza.restfulapi.infra.dto.open.rs.ObjectRs;
+import feign.Headers;
+import feign.Param;
+import feign.RequestLine;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,8 +37,11 @@ public interface RestfulApiPublicClient {
     @PutMapping(value = "/objects/{id}", consumes = "application/json")
     ObjectFullUpdateRs putObject(@PathVariable("id") String id, @RequestBody ObjectFullUpdateRq request);
 
-    @PutMapping(value = "/objects/{id}", consumes = "application/json")
-    ObjectPartUpdateRs patchObject(@PathVariable("id") String id, @RequestBody ObjectPartUpdateRq request);
+    @PatchMapping(value = "/objects/{id}", consumes = "application/json", produces = "application/json")
+    ObjectPartUpdateRs patchObject(
+            @PathVariable("id") String id,
+            @RequestBody ObjectPartUpdateRq request
+    );
 
     @DeleteMapping("/objects/{id}")
     Map<String, String> deleteObject(@PathVariable("id") String id);

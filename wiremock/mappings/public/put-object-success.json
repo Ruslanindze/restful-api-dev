@@ -1,0 +1,27 @@
+{
+  "priority": 20,
+  "request": {
+    "method": "PUT",
+    "urlPathPattern": "/objects/.*",
+    "headers": {
+      "Content-Type": {
+        "matches": "application/json.*"
+      }
+    },
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.name && @.name != null && @.data && @.data != null)]"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "public/put-object-response.json",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "transformers": [
+      "response-template"
+    ]
+  }
+}

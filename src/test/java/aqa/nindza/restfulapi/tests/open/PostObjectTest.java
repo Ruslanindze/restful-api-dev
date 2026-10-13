@@ -6,6 +6,7 @@ import aqa.nindza.restfulapi.utils.ResourceReader;
 import feign.FeignException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -13,16 +14,20 @@ import org.junit.jupiter.params.provider.ValueSource;
 import java.time.Instant;
 import java.util.Map;
 
+import static aqa.nindza.restfulapi.infra.config.TestTags.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @DisplayName("POST /objects")
+@Tag(REGRESS)
 public class PostObjectTest extends BaseTest {
 
     @Nested
+    @Tag(POSITIVE)
     class Positive {
         @ParameterizedTest
         @ValueSource(strings = "data/in/create_object.json")
+        @Tag(SMOKE)
         void shouldCreateObjectWhenRqIsValid(String jsonRequest) {
             // Подготовка запроса
             String requestInsTr = ResourceReader.read(jsonRequest);
@@ -52,6 +57,7 @@ public class PostObjectTest extends BaseTest {
     }
 
     @Nested
+    @Tag(NEGATIVE)
     class Negative {
         @Test
         void shouldBadRqWhenNameNull() {
