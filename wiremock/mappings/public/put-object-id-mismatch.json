@@ -2,12 +2,7 @@
   "priority": 15,
   "request": {
     "method": "PUT",
-    "urlPathPattern": "/objects/1",
-    "bodyPatterns": [
-      {
-        "matchesJsonPath": "$[?(@.id == '2')]"
-      }
-    ]
+    "urlPathPattern": "/objects/2222"
   },
   "response": {
     "status": 400,

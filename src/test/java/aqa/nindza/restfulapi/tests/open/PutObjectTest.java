@@ -67,9 +67,9 @@ public class PutObjectTest extends BaseTest {
 
         @Test
         void shouldReturn400WhenIdInUrlAndBodyMismatch() {
-            String id = "1";
+            String id = "2222";
             var request = ObjectFullUpdateRq.builder()
-                    .withId("2")
+                    .withId(id)
                     .withName("Updated Name")
                     .withData(Map.of("year", 2027))
                     .build();
@@ -81,7 +81,7 @@ public class PutObjectTest extends BaseTest {
 
         @Test
         void shouldReturn400WhenRequiredFieldsMissing() {
-            String id = "1";
+            String id = "1111";
             var request = ObjectFullUpdateRq.builder()
                     .withName(null)
                     .withData(Map.of("year", 2027))

@@ -2,7 +2,7 @@
   "priority": 15,
   "request": {
     "method": "PUT",
-    "urlPathPattern": "/objects/[0-68-9][0-9]{2}",
+    "urlPathPattern": "/objects/1111",
     "headers": {
       "Content-Type": {
         "matches": "application/json.*"
