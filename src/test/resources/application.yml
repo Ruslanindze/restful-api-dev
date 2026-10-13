@@ -5,3 +5,18 @@ spring:
 external:
   api:
     url: https://api.restful-api.dev
+    secure-key: ${X_API_KEY:UNKNOWN}
+
+logging:
+  level:
+    root: INFO
+    aqa:
+      nindza:
+        restfulapi:
+          infra:
+            clients: DEBUG
+
+feign:
+  httpclient:
+    hc5:
+      enabled: true

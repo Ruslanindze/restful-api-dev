@@ -1,0 +1,36 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/objects?id=2&id=6&id=12"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": [
+      {
+        "id": "2",
+        "name": "Apple iPhone 12 Mini, 256GB, Blue",
+        "data": null
+      },
+      {
+        "id": "6",
+        "name": "Apple AirPods",
+        "data": {
+          "generation": "3rd",
+          "price": 120
+        }
+      },
+      {
+        "id": "12",
+        "name": "Apple iPad Air",
+        "data": {
+          "Generation": "4th",
+          "Price": "419.99",
+          "Capacity": "64 GB"
+        }
+      }
+    ],
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

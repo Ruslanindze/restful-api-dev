@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/objects/404"
+  },
+  "response": {
+    "status": 404,
+    "jsonBody": {
+      "error": "Object not found"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "priority": 15,
+  "request": {
+    "method": "PUT",
+    "urlPathPattern": "/objects/2222"
+  },
+  "response": {
+    "status": 400,
+    "jsonBody": {
+      "error": "Bad Request",
+      "message": "ID in URL and body mismatch"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

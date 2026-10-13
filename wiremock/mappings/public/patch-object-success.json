@@ -1,0 +1,22 @@
+{
+  "priority": 10,
+  "request": {
+    "method": "PATCH",
+    "urlPathPattern": "/objects/7[0-9]{2}",
+    "headers": {
+      "Content-Type": {
+        "matches": "application/json.*"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "public/patch-object-response.json",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "transformers": [
+      "response-template"
+    ]
+  }
+}

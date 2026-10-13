@@ -1,0 +1,27 @@
+{
+  "priority": 15,
+  "request": {
+    "method": "PUT",
+    "urlPathPattern": "/objects/1111",
+    "headers": {
+      "Content-Type": {
+        "matches": "application/json.*"
+      }
+    },
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(!@.name || @.name == null || !@.data || @.data == null)]"
+      }
+    ]
+  },
+  "response": {
+    "status": 400,
+    "jsonBody": {
+      "error": "Bad Request",
+      "message": "Required fields missing"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "priority": 15,
+  "request": {
+    "method": "PUT",
+    "urlPathPattern": "/objects/999"
+  },
+  "response": {
+    "status": 404,
+    "jsonBody": {
+      "error": "Not Found",
+      "message": "Object not found"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

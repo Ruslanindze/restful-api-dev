@@ -1,0 +1,20 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/objects/1"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "id": "1",
+      "name": "Google Pixel 6 Pro",
+      "data": {
+        "color": "Cloudy White",
+        "capacity": "128 GB"
+      }
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

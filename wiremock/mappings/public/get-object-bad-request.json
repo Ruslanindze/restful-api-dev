@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/objects/[^0-9]+"
+  },
+  "response": {
+    "status": 400,
+    "jsonBody": {
+      "error": "Invalid id format"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

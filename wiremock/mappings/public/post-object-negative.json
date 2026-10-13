@@ -1,0 +1,22 @@
+{
+  "priority": 10,
+  "request": {
+    "method": "POST",
+    "url": "/objects",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(!@.name || @.name == null || !@.data || @.data == null)]"
+      }
+    ]
+  },
+  "response": {
+    "status": 400,
+    "jsonBody": {
+      "error": "Bad Request",
+      "message": "Field 'name' is required"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "priority": 15,
+  "request": {
+    "method": "PUT",
+    "urlPathPattern": "/objects/.*",
+    "headers": {
+      "Content-Type": {
+        "matches": "text/.*"
+      }
+    }
+  },
+  "response": {
+    "status": 415,
+    "jsonBody": {
+      "error": "Unsupported Media Type",
+      "message": "Content-Type must be application/json"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
