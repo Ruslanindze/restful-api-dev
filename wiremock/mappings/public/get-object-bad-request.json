@@ -1,12 +1,12 @@
 {
   "request": {
     "method": "GET",
-    "urlPathPattern": "/objects/(4_0_4|\\$\\$\\$)"
+    "urlPathPattern": "/objects/[^0-9]+"
   },
   "response": {
-    "status": 404,
+    "status": 400,
     "jsonBody": {
-      "error": "Object not found"
+      "error": "Invalid id format"
     },
     "headers": {
       "Content-Type": "application/json"

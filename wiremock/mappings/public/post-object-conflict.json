@@ -1,0 +1,22 @@
+{
+  "priority": 15,
+  "request": {
+    "method": "POST",
+    "url": "/objects",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.name == 'Apple MacBook Pro 666')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 409,
+    "jsonBody": {
+      "error": "Conflict",
+      "message": "Object already exists"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
